@@ -13,4 +13,6 @@ var app = builder.Build();
 app.UseRouting();
 app.MapControllers();
 
+app.MapGet("/", () => "SantanderWebhook API funcionando! 🚀");
+
 app.Run();
