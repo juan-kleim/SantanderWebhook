@@ -1,8 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "Ie6/oolptEw=",
+  "dgSpecHash": "tk6dcSR/qBw=",
   "success": true,
   "projectFilePath": "C:\\Users\\Desenvolvimento\\Documents\\SantanderWebhook\\SantanderWebhook\\SantanderWebhook.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\Desenvolvimento\\.nuget\\packages\\microsoft.netcore.app.ref\\6.0.36\\microsoft.netcore.app.ref.6.0.36.nupkg.sha512",
+    "C:\\Users\\Desenvolvimento\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\6.0.36\\microsoft.windowsdesktop.app.ref.6.0.36.nupkg.sha512",
+    "C:\\Users\\Desenvolvimento\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\6.0.36\\microsoft.aspnetcore.app.ref.6.0.36.nupkg.sha512",
+    "C:\\Users\\Desenvolvimento\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\6.0.36\\microsoft.netcore.app.host.win-x64.6.0.36.nupkg.sha512"
+  ],
   "logs": []
 }
