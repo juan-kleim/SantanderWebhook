@@ -1,18 +1,27 @@
+using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.Http;
+using Microsoft.Extensions.Hosting;
+
 var builder = WebApplication.CreateBuilder(args);
-
-// Configurar porta do Render
-var port = Environment.GetEnvironmentVariable("PORT") ?? "5000";
-builder.WebHost.UseUrls($"http://0.0.0.0:{port}");
-
-// Seus serviços aqui
-builder.Services.AddControllers();
-
 var app = builder.Build();
 
-// Pipeline
-app.UseRouting();
-app.MapControllers();
+// Endpoint básico só pra ver no navegador
+app.MapGet("/", () => "✅ Webhook Santander está rodando!");
 
-app.MapGet("/", () => "SantanderWebhook API funcionando! 🚀");
+// Endpoint de teste
+app.MapGet("/ping", () => "🏓 pong");
+
+// Endpoint de notificação do Santander (POST)
+app.MapPost("/notificacao", async (HttpRequest request, HttpResponse response) =>
+{
+    using var reader = new StreamReader(request.Body);
+    var body = await reader.ReadToEndAsync();
+
+    Console.WriteLine("🔔 Notificação recebida:");
+    Console.WriteLine(body);
+
+    response.StatusCode = 200;
+    await response.WriteAsync("OK");
+});
 
 app.Run();
